@@ -23,8 +23,10 @@ public class PlayerController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         Physics.gravity *= gravityModifier;
         playerAudio = GetComponent<AudioSource>();
+        dirtParticle.Play();
+
     }
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -33,12 +35,13 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            gameOver = true;
             Debug.Log("Game Over!");
             playerAnim.SetBool("Death_b", true);
             playerAnim.SetInteger("DeathType_int", 1);
-            explosionParticle.Stop();
+            explosionParticle.Play();
             playerAudio.PlayOneShot(crashSound, 10f);
+            dirtParticle.Stop();
+            gameOver = true;
         }
     }
 
