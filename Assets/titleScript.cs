@@ -2,32 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveLeft : MonoBehaviour
+public class titleScript : MonoBehaviour
 {
-    
-    [HideInInspector] public float speed = 20;
-    
+
     private PlayerController playerControllerScript;
-    
-    private float leftBound = -15;
+
+    public GameObject Title;
 
     // Start is called before the first frame update
     void Start()
     {
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!playerControllerScript.gameOver)
+        if(Input.GetKey(KeyCode.Space))
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            Title.SetActive(false);
         }
-        if (transform.position.x < leftBound && gameObject.CompareTag("Obstacle"))
+
+        if(playerControllerScript.gameOver)
         {
-            Destroy(gameObject);
+            Title.SetActive(false);
         }
     }
 }

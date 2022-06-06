@@ -108,14 +108,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752b2f97d6675774398eb54d626260ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 10
-  gravityModifier: 1.5
+  MoveLeft: {fileID: 0}
+  Timer: {fileID: 0}
+  jumpForce: 22
+  gravityModifier: 5
   isOnGround: 1
   gameOver: 0
-  explosionParticle: {fileID: 9125212449759046732, guid: cb7cd9b0c56a24d49a40784bd3203ae6,
-    type: 3}
-  dirtParticle: {fileID: 1438565936, guid: fb82dfb8d1c7044c69afd2486befecb3, type: 3}
-  jumpSound: {fileID: 8300000, guid: 113ee460fadc340e4957a7404a9fbb27, type: 3}
+  explosionParticle: {fileID: 0}
+  dirtParticle: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: 08ab7053d586c458db3774d33c141a4b, type: 3}
   crashSound: {fileID: 8300000, guid: e7ee25a47d63b46cdaf65480d62b405c, type: 3}
 --- !u!82 &3503243434239094369
 AudioSource:
